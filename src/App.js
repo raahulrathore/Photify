@@ -16,11 +16,25 @@ function App() {
     });
     return ref.current;
   };
+  const default_string = `Hmmmm... Couldn't find anything relevant yet! Please try again :)`;
 
   return (
     <div className="App">
       <NavbarComp setNav={setNav} pageNo={pageNo} setPageNo={setPageNo} />
       <ImageCard imageData={nav} />
+      {!!!nav.length && (
+        <div
+          style={{
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%,-50%)",
+            position: "fixed",
+            color: "grey",
+          }}
+        >
+          <h2>{default_string}</h2>
+        </div>
+      )}
       {!!nav.length && (
         <NavigationButton
           pageNo={pageNo}
