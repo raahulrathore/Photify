@@ -8,7 +8,6 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material//Grid";
 
 export default function ImageCard(props) {
-  console.log(props.imageData)
   return (
     <Grid
       container
