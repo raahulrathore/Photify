@@ -1,0 +1,20 @@
+.navigationButtons{
+    margin-top:25px;
+    margin-left:42%;
+    padding-bottom:15px
+}
+
+.previousButton{
+    float: left;
+    padding-right:10px;
+}
+
+.upArrow{
+    color: red;
+    right: 30px;
+    bottom: 60px;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    cursor: pointer;
+}

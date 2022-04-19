@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import { useState, useEffect, useRef } from "react";
+import "./App.css";
+import NavigationButton from "./components/Footer/NavigationButton";
+import NavbarComp from "./components/Navbar/NavbarComp";
+import ImageCard from "./components/Card/Card";
 function App() {
+  const [nav, setNav] = useState([]);
+  const [pageNo, setPageNo] = useState(1);
+  const [nextClicked, setNextClicked] = useState(false);
+
+  const usePreviousValue = (value) => {
+    const ref = useRef();
+    useEffect(() => {
+      ref.current = value;
+    });
+    return ref.current;
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavbarComp setNav={setNav} pageNo={pageNo} setPageNo={setPageNo} />
+      <ImageCard imageData={nav} />
+      {!!nav.length && (
+        <NavigationButton
+          pageNo={pageNo}
+          setPageNo={setPageNo}
+          setNextClicked={setNextClicked}
+        />
+      )}
     </div>
   );
 }
