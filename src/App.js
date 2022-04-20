@@ -16,7 +16,7 @@ function App() {
     });
     return ref.current;
   };
-  const default_string = `Hmmmm... Couldn't find anything relevant yet! Please try again :)`;
+  const default_string = `Hmmm... Couldn't find anything relevant yet! Please try again :)`;
 
   return (
     <div className="App">
